@@ -5,7 +5,9 @@ using System.Text;
 
 namespace HMFSeat
 {
-    class LoginResult
+    public class AreaResult
     {
+        public string ID { get; set; }
+        public string Name { get; set; }
     }
 }
