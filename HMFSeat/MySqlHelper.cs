@@ -39,7 +39,7 @@ namespace HMFSeat
             List<AreaResult> logins = null;
             mysqlconn.Open();
             DataSet ds = new DataSet();
-            MySqlCommand cmd = new MySqlCommand("set names utf8;" + sql, mysqlconn);
+            MySqlCommand cmd = new MySqlCommand(sql, mysqlconn);
             MySqlDataReader dr = cmd.ExecuteReader();
 
             if (dr.HasRows)
@@ -50,11 +50,12 @@ namespace HMFSeat
                     logins.Add(new AreaResult
                     {
                         ID = dr[0].ToString(),
-                        Name = dr[1].ToString(),
+                        Name = dr[1].ToString()
+
                     });
+                    Console.WriteLine("SQL语句读取结果--ID为:{0};区域为:{1}", dr[0], dr[1]);
                 }
             }
-
             mysqlconn.Close();
             return logins;
         }

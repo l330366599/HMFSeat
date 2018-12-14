@@ -18,9 +18,11 @@ namespace HMFSeat
             InitializeComponent();
             string sql = "select * from Area";
             List<AreaResult> lar = MySqlHelper.Area(sql);
-            Console.WriteLine("测试1:{0}",lar);
-            AreaResult art = new AreaResult();
-            Console.WriteLine("打印2:{0},{1}", art.ID, art.Name);
+            for(int i=0; i<lar.Count; i++)
+            {
+                Console.WriteLine("缓冲表AreaRusult结果为--ID为:{0};区域为:{1}", lar[i].ID, lar[i].Name);
+            }
+
         }
     }
 }
