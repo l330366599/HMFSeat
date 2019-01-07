@@ -50,19 +50,71 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Appointment.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Appointment.Designer.cs">
+      <DependentUpon>Appointment.cs</DependentUpon>
     </Compile>
     <Compile Include="AreaResult.cs" />
+    <Compile Include="BackGround.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BackGround.Designer.cs">
+      <DependentUpon>BackGround.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Basic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Basic.Designer.cs">
+      <DependentUpon>Basic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Foreground.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Foreground.Designer.cs">
+      <DependentUpon>Foreground.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
     <Compile Include="MySqlHelper.cs" />
     <Compile Include="MySqlHelper1.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="ReportForms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportForms.Designer.cs">
+      <DependentUpon>ReportForms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SeatRusult.cs" />
+    <Compile Include="SignIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SignIn.Designer.cs">
+      <DependentUpon>SignIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SystemSetup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SystemSetup.Designer.cs">
+      <DependentUpon>SystemSetup.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Appointment.resx">
+      <DependentUpon>Appointment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Basic.resx">
+      <DependentUpon>Basic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Foreground.resx">
+      <DependentUpon>Foreground.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -72,7 +124,11 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="SignIn.resx">
+      <DependentUpon>SignIn.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -82,6 +138,18 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\按钮红.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\按钮蓝.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\按钮红竖.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\按钮蓝竖.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

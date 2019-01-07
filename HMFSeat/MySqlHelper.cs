@@ -11,7 +11,7 @@ namespace HMFSeat
     public static class MySqlHelper
     {
         //数据库连接字符串
-        public static string conn = "Database='hmfseat';Data Source='localhost';User Id='root';Password='root';charset='utf8';pooling=true";
+        public static string conn = "Server='127.0.0.1';Database='hmfseat';User Id='root';Password='root'";
         //public static DataSet getAllCustomerInfo(string sql)
         //{
         //    MySqlConnection mysqlconn = new MySqlConnection(Conn);//创建一个C#连接MySQL的对象
@@ -53,48 +53,38 @@ namespace HMFSeat
                         Name = dr[1].ToString()
 
                     });
-                    Console.WriteLine("SQL语句读取结果--ID为:{0};区域为:{1}", dr[0], dr[1]);
                 }
             }
             mysqlconn.Close();
             return logins;
         }
 
-        //public static List<MenjinjiluResult> GetMenJijilus(string sql)
-        //{
-        //    MySqlConnection mysqlconn = new MySqlConnection(Conn);//创建一个C#连接MySQL的对象
-        //    List<MenjinjiluResult> logins = null;
-        //    mysqlconn.Open();
-        //    DataSet ds = new DataSet();
-        //    MySqlCommand cmd = new MySqlCommand("set names gb2312;" + sql, mysqlconn);
-        //    MySqlDataReader dr = cmd.ExecuteReader();
+        public static List<SeatRusult> Seat (string sql)
+        {
+            MySqlConnection mysqlconn = new MySqlConnection(conn);//创建一个C#连接MySQL的对象
+            List<SeatRusult> logins = null;
+            mysqlconn.Open();
+            DataSet ds = new DataSet();
+            MySqlCommand cmd = new MySqlCommand(sql, mysqlconn);
+            MySqlDataReader dr = cmd.ExecuteReader();
 
-        //    if (dr.HasRows)
-        //    {
-        //        logins = new List<MenjinjiluResult>();
-        //        while (dr.Read())
-        //        {
-        //            string yx = dr[4].ToString();
+            if (dr.HasRows)
+            {
+                logins = new List<SeatRusult>();
+                while (dr.Read())
+                {
+                    logins.Add(new SeatRusult
+                    {
+                        SeatID = dr[0].ToString(),
+                        SeatDesk = dr[1].ToString(),
+                        AreaID = dr[2].ToString()
+                    });
+                }
+            }
 
-        //            MenjinjiluResult r = new MenjinjiluResult
-        //            {
-        //                MJJLID = dr[0].ToString(),
-        //                CardID = dr[1].ToString(),
-        //                entryTime = DateTime.Parse(dr[2].ToString()),
-        //                YX = (yx == "1")
-        //            };
-        //            if (dr[3] == System.DBNull.Value)
-        //                r.departureTime = null;
-        //            else
-        //                r.departureTime = DateTime.Parse(dr[3].ToString());
-
-        //            logins.Add(r);
-        //        }
-        //    }
-
-        //    mysqlconn.Close();
-        //    return logins;
-        //}
+            mysqlconn.Close();
+            return logins;
+        }
 
 
         //public static int ExcuteSql(string sql)
